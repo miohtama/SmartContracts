@@ -1,19 +1,22 @@
 
+# Scope
+
+This is not a full audit of ChronoBank platform. Only the parts consider the crowdsale token (TIME) were audited.
 
 Covered
 
 * ChronoBankAsset.sol
-* ChronoBankplatform.sol
+* ChronoBankPlatform.sol
+* ChronoBankAssetProxy.sol
 * ChronoBankAssetInterface.sol
 * TIME.sol
+* Owned.sol
 
 Not covered
 
-* ChronoBankAssetProxy.sol
 * ChronoBankAssetProxyInterface.sol
 * ChronoBankAssetWithFee.sol
 * ChronoBankAssetWithFeeProxy.sol
-* ChronoBankPlatform.sol
 * ChronoBankPlatformEmitter.sol
 * ChronoMint.sol
 * ChronoMintConfigurable.sol
@@ -27,7 +30,6 @@ Not covered
 * LOC.sol
 * Managed.sol
 * Migrations.sol
-* Owned.sol
 * Owners.sol
 * Rewards.sol
 * Rooted.sol
@@ -38,4 +40,17 @@ Not covered
 * helpers/FakeCoin2.sol
 * helpers/FakeCoin3.sol
 * helpers/Stub.sol
+
+## Applied design patterns
+
+No throws used. Instead of an error event is emitted and boolean false returned. [This is due to a limitation for a current EVM](https://github.com/ethereum/EIPs/issues/62).
+
+## Walkthrough
+
+* ChronoBankAsset.init
+* etc...
+
+
+
+
 
